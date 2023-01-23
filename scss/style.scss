@@ -1,3 +1,6 @@
+@import "utilities";
+@import "btnConfig";
+@import "config";
 
 * {
   box-sizing: border-box;
@@ -10,16 +13,65 @@ body {
   font-family: $font-stack;
   line-height: 1;
 }
-
 img {
   border-radius: 50%;
+  width: 40%;
 }
 
 a {
   text-decoration: none;
 }
 
+p {
+  font-size: .75em;
+}
+
 .hero {
+  @include set-bg($primary-color);
+  height: 600px;
+  
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    font-size: .75em;
+    padding: 15px;
+  }
+  a {
+    color: text-color-picker($primary-color)
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;  
+  }
+}
+
+a:hover {
+  color: $secondary-color;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: .75;
+}
+.banner {
+  font-size: 15px;
+  line-height: .25;
+}
+
   // This is where the bulk of the SCSS styling needs to be done
 
   // Take a look at the other files we've built already. How can they be useful here?
@@ -28,7 +80,7 @@ a {
   // 1. $variables
   // 2. nesting (dont forget about the ampersand (&) parent selector!)
   // 3. At-Rules
-}
+
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
 // While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
